@@ -21,7 +21,7 @@ make
 Execute like this (lists are stored in ./assets/ and you can easily create more):
 
 ```bash
-./pendu [list]
+./hangman [list]
 ```
 
 if encounter any bugs please contact me at: msolet-l@student.42.fr
