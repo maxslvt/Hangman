@@ -19,10 +19,10 @@
 # define RESET   "\x1b[0m"
 
 # define ERROR1 "\x1b[31mUsage: ./hangman [file]\n"
-# define ERROR2 "\x1b[31mError: Need a \".txt\" file\n"
-# define ERROR3 "\x1b[31mError: File can't be reached:"
-# define ERROR4 "\x1b[31mError: Malloc error.\n"
-# define ERROR5 "\x1b[31mError: No word founded in this file.\n"
+# define ERROR2 "Need a \".txt\" file\n"
+# define ERROR3 "File can't be reached:"
+# define ERROR4 "Malloc error.\n"
+# define ERROR5 "No word founded in this file.\n"
 
 typedef enum Bool
 {

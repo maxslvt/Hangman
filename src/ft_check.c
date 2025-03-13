@@ -17,7 +17,7 @@ void ft_check_start(t_vars *data, const char *filename)
     data->secretWord = getRandomWord(filename);
     if (!data->secretWord)
     {
-        printf("%s", ERROR5);
+        ft_printerror(ERROR5);
         exit(1);
     }
 
@@ -27,7 +27,7 @@ void ft_check_start(t_vars *data, const char *filename)
     data -> foundedLetter = (int *)malloc(data->qLetters * sizeof(int));
     if (!data->foundedLetter)
     {
-        printf("%s", ERROR4);
+        ft_printerror(ERROR4);
         free(data->secretWord);
         exit(1);
     }

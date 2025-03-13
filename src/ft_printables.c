@@ -2,7 +2,7 @@
 
 t_Bool	ft_printerror(char *error_msg)
 {
-	printf("error: %s", error_msg);
+	printf(RED"Error: %s", error_msg);
 	return (False);
 }
 
