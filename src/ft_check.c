@@ -17,7 +17,7 @@ void ft_check_start(t_vars *data, const char *filename)
     data->secretWord = getRandomWord(filename);
     if (!data->secretWord)
     {
-        printf("Erreur : Impossible de recuperer un mot\n");
+        printf("%s", ERROR5);
         exit(1);
     }
 
@@ -27,7 +27,7 @@ void ft_check_start(t_vars *data, const char *filename)
     data -> foundedLetter = (int *)malloc(data->qLetters * sizeof(int));
     if (!data->foundedLetter)
     {
-        printf("Erreur d'allocation mémoire\n");
+        printf("%s", ERROR4);
         free(data->secretWord);
         exit(1);
     }
@@ -58,19 +58,19 @@ void ft_check_game(t_vars *data)
 
     while (data->tryRemaining > 0 && !ft_check_win(data->foundedLetter, data->qLetters))
     {
-        printf("\n\nIl vous reste %d coups a jouer", data->tryRemaining);
+        printf(YELLOW "\n\nIl vous reste %d coups a jouer" RESET, data->tryRemaining);
         ft_printPendu(data->tryRemaining);
-        printf("\nQuel est le mot secret ? ");
+        printf(YELLOW "\nQuel est le mot secret ? " RESET);
 
         for (int i = 0 ; i < data->qLetters ; i++)
         {
             if (data->foundedLetter[i])
-                printf("%c", data->secretWord[i]);
+                printf(GREEN "%c" RESET, data->secretWord[i]);
             else
-                printf("*");
+                printf(RED "*" RESET);
         }
 
-        printf("\nProposez une lettre : ");
+        printf(YELLOW "\nProposez une lettre : " RESET);
         letter = readCharactere();
 
         if (!foundLetter(letter, data->secretWord, data->foundedLetter))
@@ -78,7 +78,7 @@ void ft_check_game(t_vars *data)
     }
 
     if (ft_check_win(data->foundedLetter, data->qLetters))
-        printf("\n\nGagne ! Le mot secret etait bien : %s\n", data->secretWord);
+        printf(GREEN "\n\nGagne ! Le mot secret etait bien : %s\n" RESET, data->secretWord);
     else
-        printf("\n   +---+\n   |   |\n   O   |\n  /|\\  |\n  / \\  |\n       |\n=========\n\nPerdu ! Le mot secret etait : %s\n", data->secretWord);
+        printf(RED "\n   +---+\n   |   |\n   O   |\n  /|\\  |\n  / \\  |\n       |\n=========\n\nPerdu ! Le mot secret etait : %s\n" RESET, data->secretWord);
 }

@@ -5,16 +5,16 @@ char *getRandomWord(const char *filename)
     FILE *file = fopen(filename, "r");
     if (!file)
     {
-        printf("Erreur : Impossible d'ouvrir le fichier %s\n", filename);
-        return NULL;
+        printf("%s %s\n",ERROR3, filename);
+        return (NULL);
     }
 
     char **words = malloc(MAX_WORDS * sizeof(char *));
     if (!words)
     {
-        printf("Erreur d'allocation mémoire\n");
+        printf("%s", ERROR4);
         fclose(file);
-        return NULL;
+        return (NULL);
     }
 
     char buffer[MAX_WORD_LENGTH];
@@ -26,9 +26,9 @@ char *getRandomWord(const char *filename)
         words[count] = strdup(buffer);
         if (!words[count])
         {
-            printf("Erreur d'allocation mémoire\n");
+            printf("%s", ERROR4);
             fclose(file);
-            return NULL;
+            return (NULL);
         }
         count++;
     }
@@ -36,8 +36,8 @@ char *getRandomWord(const char *filename)
 
     if (count == 0)
     {
-        printf("Erreur : Aucun mot trouvé dans le fichier\n");
-        return NULL;
+        printf("%s", ERROR5);
+        return (NULL);
     }
 
     srand(time(NULL));

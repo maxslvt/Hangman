@@ -96,5 +96,5 @@ void ft_printPendu(int essaisRestants)
     if (index > 10)
         index = 10;
 
-    printf("%s\n", PENDU[index]);
+    printf(MAGENTA "%s\n" RESET, PENDU[index]);
 }

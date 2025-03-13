@@ -10,8 +10,19 @@
 #define MAX_WORD_LENGTH 50
 #define MAX_WORDS 1000 
 
-# define ERROR1 "Usage: ./hangman [file]\n"
-# define ERROR2 "[LIST] Need a \".txt\" file\n"
+# define RED     "\x1b[31m"
+# define GREEN   "\x1b[32m"
+# define YELLOW  "\x1b[33m"
+# define BLUE    "\x1b[34m"
+# define MAGENTA "\x1b[35m"
+# define CYAN    "\x1b[36m"
+# define RESET   "\x1b[0m"
+
+# define ERROR1 "\x1b[31mUsage: ./hangman [file]\n"
+# define ERROR2 "\x1b[31mError: Need a \".txt\" file\n"
+# define ERROR3 "\x1b[31mError: File can't be reached:"
+# define ERROR4 "\x1b[31mError: Malloc error.\n"
+# define ERROR5 "\x1b[31mError: No word founded in this file.\n"
 
 typedef enum Bool
 {
