@@ -1,4 +1,4 @@
-#include "pendu.h"
+#include <hangman.h>
 
 t_Bool	ft_check_filename(char *dir)
 {
@@ -58,19 +58,19 @@ void ft_check_game(t_vars *data)
 
     while (data->tryRemaining > 0 && !ft_check_win(data->foundedLetter, data->qLetters))
     {
-        printf(YELLOW "\n\nIl vous reste %d coups a jouer" RESET, data->tryRemaining);
+        printf(YELLOW "\n\nIl vous reste %d coups a jouer" WHITE, data->tryRemaining);
         ft_printPendu(data->tryRemaining);
-        printf(YELLOW "\nQuel est le mot secret ? " RESET);
+        printf(YELLOW "\nQuel est le mot secret ? " WHITE);
 
         for (int i = 0 ; i < data->qLetters ; i++)
         {
             if (data->foundedLetter[i])
-                printf(GREEN "%c" RESET, data->secretWord[i]);
+                printf(GREEN "%c" WHITE, data->secretWord[i]);
             else
-                printf(RED "*" RESET);
+                printf(RED "*" WHITE);
         }
 
-        printf(YELLOW "\nProposez une lettre : " RESET);
+        printf(YELLOW "\nProposez une lettre : " WHITE);
         letter = readCharactere();
 
         if (!foundLetter(letter, data->secretWord, data->foundedLetter))
@@ -78,7 +78,7 @@ void ft_check_game(t_vars *data)
     }
 
     if (ft_check_win(data->foundedLetter, data->qLetters))
-        printf(GREEN "\n\nGagne ! Le mot secret etait bien : %s\n" RESET, data->secretWord);
+        printf(GREEN "\n\nGagne ! Le mot secret etait bien : %s\n" WHITE, data->secretWord);
     else
-        printf(RED "\n   +---+\n   |   |\n   O   |\n  /|\\  |\n  / \\  |\n       |\n=========\n\nPerdu ! Le mot secret etait : %s\n" RESET, data->secretWord);
+        printf(RED "\n   +---+\n   |   |\n   O   |\n  /|\\  |\n  / \\  |\n       |\n=========\n\nPerdu ! Le mot secret etait : %s\n" WHITE, data->secretWord);
 }

@@ -1,4 +1,4 @@
-#include "pendu.h"
+#include <hangman.h>
 
 char *getRandomWord(const char *filename)
 {
