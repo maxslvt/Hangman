@@ -1,4 +1,4 @@
-#include "pendu.h"
+#include <hangman.h>
 
 int sizeWord(char secretWord[])
 {

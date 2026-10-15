@@ -1,14 +1,14 @@
 #ifndef PENDU_H
 # define PENDU_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <time.h>
-#include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <ctype.h>
+# include <time.h>
+# include <string.h>
 
-#define MAX_WORD_LENGTH 50
-#define MAX_WORDS 1000 
+# define MAX_WORD_LENGTH 50
+# define MAX_WORDS 1000
 
 # define RED     "\x1b[31m"
 # define GREEN   "\x1b[32m"
@@ -16,13 +16,13 @@
 # define BLUE    "\x1b[34m"
 # define MAGENTA "\x1b[35m"
 # define CYAN    "\x1b[36m"
-# define RESET   "\x1b[0m"
+# define WHITE   "\x1b[0m"
 
-# define ERROR1 "\x1b[31mUsage: ./hangman [file]\n"
-# define ERROR2 "Need a \".txt\" file\n"
-# define ERROR3 "File can't be reached:"
-# define ERROR4 "Malloc error.\n"
-# define ERROR5 "No word founded in this file.\n"
+# define ERROR1 RED "\x1b[31mUsage: ./hangman [file]\n" WHITE
+# define ERROR2 RED "Need a \".txt\" file\n" WHITE
+# define ERROR3 RED "File can't be reached:" WHITE
+# define ERROR4 RED "Malloc error.\n" WHITE
+# define ERROR5 RED "No word founded in this file.\n" WHITE
 
 typedef enum Bool
 {

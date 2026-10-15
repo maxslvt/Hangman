@@ -1,4 +1,4 @@
-#include "pendu.h"
+#include <hangman.h>
 
 t_Bool	ft_printerror(char *error_msg)
 {
@@ -96,5 +96,5 @@ void ft_printPendu(int essaisRestants)
     if (index > 10)
         index = 10;
 
-    printf(MAGENTA "%s\n" RESET, PENDU[index]);
+    printf(MAGENTA "%s\n" WHITE, PENDU[index]);
 }

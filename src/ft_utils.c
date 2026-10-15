@@ -1,4 +1,4 @@
-#include "pendu.h"
+#include <hangman.h>
 
 void initBoard(int *foundedLetter, int size)
 {
